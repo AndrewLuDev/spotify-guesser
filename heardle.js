@@ -4,6 +4,12 @@ const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 const playlistId = process.env.PLAYLIST_ID;
 
+let playlist = [];
+var track = {
+    name: "",
+    previewUrl: "",
+};
+
 //Authorization
 const authHeaders = {
     'Authorization': `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
@@ -47,3 +53,27 @@ async function getRandomSong(accessToken) {
         previewUrl: track.preview_url
     };
 }
+
+document.getElementById('submitGuess').addEventListener('click', async () => {
+    const guessedSong = document.getElementById('guessInput').value.toLowerCase();
+    const accessToken = await getAccessToken();
+    track = await getRandomSong(accessToken);
+
+    if (guessedSong == track.name.toLowerCase()) {
+        alert('Congratulations! You guessed the song correctly! :)');
+    } else {
+        alert('Oops! That is not the correct song. Try again! :(');
+        console.log(track);
+    }
+});
+
+document.getElementById('refreshButton').addEventListener('click', async () => {
+    const accessToken = await getAccessToken();
+    await getPlaylist(accessToken);
+
+    track = await getRandomSong(accessToken);
+    console.log(track);
+
+    //Updating Spotify player with the new song info
+    document.getElementById('spotifyPlayer').src = track.previewUrl;
+});
