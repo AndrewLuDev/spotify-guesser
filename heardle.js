@@ -21,13 +21,13 @@ async function getAccessToken() {
     return data.access_token;
 };
 
-async function checkToken() {
-    try {
-        const result = await getAccessToken();
-        console.log("Promise pending or fulfilled");
-    } catch (error) {
-        console.log("Promise failed or rejected");
-    }
-};
-
-checkToken();
+//Playlist details
+async function getPlaylist(accessToken) {
+    const response = await fetch (`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+        headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
+    });
+    const data = await response.json();
+    playlist = data.items.map(item => item.track.name);
+}
