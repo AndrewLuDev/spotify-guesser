@@ -31,3 +31,19 @@ async function getPlaylist(accessToken) {
     const data = await response.json();
     playlist = data.items.map(item => item.track.name);
 }
+
+//Random Song from Playlist
+async function getRandomSong(accessToken) {
+    const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+        headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
+    });
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.items.length);
+    const track = data.items[randomIndex].track;
+    return {
+        name: track.name,
+        previewUrl: track.preview_url
+    };
+}
