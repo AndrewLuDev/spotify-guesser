@@ -10,6 +10,9 @@ var track = {
     previewUrl: "",
 };
 
+//Set initial volume to 15%
+document.getElementById('spotifyPlayer').volume = 0.15;
+
 //Authorization
 const authHeaders = {
     'Authorization': `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
