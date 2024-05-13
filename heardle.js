@@ -79,4 +79,6 @@ document.getElementById('refreshButton').addEventListener('click', async () => {
 
     //Updating Spotify player with the new song info
     document.getElementById('spotifyPlayer').src = track.previewUrl;
+
+    document.getElementById('hint').innerText = `Hint: First letter is "${track.name.charAt(0)}"`;
 });
