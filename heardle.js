@@ -57,6 +57,27 @@ async function getRandomSong(accessToken) {
     };
 }
 
+function showSuggestions() {
+    const input = document.getElementById('guessInput').value.toLowerCase();
+    const suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.innerHTML = '';
+
+    if (input.trim() !== '') {
+        const matchedSongs = playlist.filter(song => song.toLowerCase().includes(input));
+
+        matchedSongs.forEach(song => {
+            const suggestion = document.createElement('div');
+            suggestion.textContent = song;
+            suggestion.classList.add('suggestion');
+            suggestion.addEventListener('click', () => {
+                document.getElementById('guessInput').value = song;
+                suggestionsDiv.innerHTML = '';
+            });
+            suggestionsDiv.appendChild(suggestion);
+        });
+    }
+}
+
 document.getElementById('submitGuess').addEventListener('click', async () => {
     const guessedSong = document.getElementById('guessInput').value.toLowerCase();
     const accessToken = await getAccessToken();

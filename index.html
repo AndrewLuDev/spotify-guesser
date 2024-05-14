@@ -11,9 +11,11 @@
         <br>
         <span id="hint"></span>
         <br>
-        <input type="text" id="guessInput" placeholder="Enter your guess" >
+        <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
         <button id="submitGuess">Submit</button>
         <button id="refreshButton">Refresh</button>
+        <br>
+        <div id="suggestions"></div>
     </div>
     <script src="heardle.js"></script>
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
