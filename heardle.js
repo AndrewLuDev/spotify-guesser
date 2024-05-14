@@ -80,8 +80,6 @@ function showSuggestions() {
 
 document.getElementById('submitGuess').addEventListener('click', async () => {
     const guessedSong = document.getElementById('guessInput').value.toLowerCase();
-    const accessToken = await getAccessToken();
-    track = await getRandomSong(accessToken);
 
     if (guessedSong == track.name.toLowerCase() || guessedSong == track.name.toLowerCase().replace(/[^\w\s]/g, '')) {
         alert('Congratulations! You guessed the song correctly! :)');
