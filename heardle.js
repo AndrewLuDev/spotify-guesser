@@ -62,7 +62,7 @@ document.getElementById('submitGuess').addEventListener('click', async () => {
     const accessToken = await getAccessToken();
     track = await getRandomSong(accessToken);
 
-    if (guessedSong == track.name.toLowerCase()) {
+    if (guessedSong == track.name.toLowerCase() || guessedSong == track.name.toLowerCase().replace(/[^\w\s]/g, '')) {
         alert('Congratulations! You guessed the song correctly! :)');
     } else {
         alert('Oops! That is not the correct song. Try again! :(');
