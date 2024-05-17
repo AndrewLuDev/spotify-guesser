@@ -52,9 +52,10 @@ async function getRandomSong(accessToken) {
     const data = await response.json();
     const randomIndex = Math.floor(Math.random() * data.items.length);
     const track = data.items[randomIndex].track;
+    const artists = track.artists.map(artist => artist.name);
     return {
         name: track.name,
-        artist: track.artists[0].name,
+        artist: artists,
         previewUrl: track.preview_url
     };
 }
