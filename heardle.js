@@ -14,17 +14,14 @@ var track = {
 //Set initial volume to 15%
 document.getElementById('spotifyPlayer').volume = 0.15;
 
-//Authorization
-const authHeaders = {
-    'Authorization': `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
-    'Content-Type': 'application/x-www-form-urlencoded',
-};
-
 //Access token
 async function getAccessToken() {
     const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
-        headers: authHeaders,
+        headers: {
+            'Authorization': `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
         body: 'grant_type=client_credentials'
     });
     const data = await response.json();
