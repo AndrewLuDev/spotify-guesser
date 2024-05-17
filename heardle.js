@@ -7,6 +7,7 @@ const playlistId = process.env.PLAYLIST_ID;
 let playlist = [];
 var track = {
     name: "",
+    artist: "",
     previewUrl: "",
 };
 
@@ -53,6 +54,7 @@ async function getRandomSong(accessToken) {
     const track = data.items[randomIndex].track;
     return {
         name: track.name,
+        artist: track.artists[0].name,
         previewUrl: track.preview_url
     };
 }
