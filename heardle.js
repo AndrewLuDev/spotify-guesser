@@ -28,25 +28,25 @@ async function getAccessToken() {
     return data.access_token;
 };
 
-//Playlist details
-async function getPlaylist(accessToken) {
+
+async function getData(accessToken) {
     const response = await fetch (`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }
     });
-    const data = await response.json();
-    playlist = data.items.map(item => item.track.name);
+    return response.json();
+}
+
+//Playlist details
+async function getPlaylist(accessToken) {
+    const data = await getData(accessToken);
+    playlist = data.items.map(item => item.track);
 }
 
 //Random Song from Playlist
 async function getRandomSong(accessToken) {
-    const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
-        headers: {
-            'Authorization': `Bearer ${accessToken}`
-        }
-    });
-    const data = await response.json();
+    const data = await getData(accessToken);
     const randomIndex = Math.floor(Math.random() * data.items.length);
     const track = data.items[randomIndex].track;
     const artists = track.artists.map(artist => artist.name);
