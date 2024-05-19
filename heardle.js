@@ -41,7 +41,7 @@ async function getData(accessToken) {
 //Playlist details
 async function getPlaylist(accessToken) {
     const data = await getData(accessToken);
-    playlist = data.items.map(item => item.track);
+    playlist = data.items.map(item => item.track.name);
 }
 
 //Random Song from Playlist
