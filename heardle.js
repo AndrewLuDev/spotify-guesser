@@ -52,7 +52,7 @@ async function getRandomSong(accessToken) {
     const artists = track.artists.map(artist => artist.name);
     return {
         name: track.name,
-        artist: artists,
+        artist: artists.join(', '),
         previewUrl: track.preview_url
     };
 }
