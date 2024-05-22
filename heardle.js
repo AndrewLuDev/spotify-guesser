@@ -99,10 +99,14 @@ document.getElementById('refreshButton').addEventListener('click', async () => {
     //Updating Spotify player with the new song info
     document.getElementById('spotifyPlayer').src = track.previewUrl;
     document.getElementById('guessInput').value = "";
-    document.getElementById('hint').innerText = "";
+    document.getElementById('songName').innerText = "";
+    document.getElementById('artistName').innerText = "";
     document.getElementById('suggestions').innerText = "";
 });
 
-document.getElementById('showHint').addEventListener('click', async () => {
-    document.getElementById('hint').innerText = `Hint: First letter is "${track.name.charAt(0)}"`;
+document.getElementById('showSong').addEventListener('click', async () => {
+    document.getElementById('songName').innerText = `Hint: First letter is "${track.name.charAt(0)}"`;
+});
+document.getElementById('showArtist').addEventListener('click', async () => {
+    document.getElementById('artistName').innerText = `by: "${track.artist}"`;
 });

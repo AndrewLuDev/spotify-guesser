@@ -9,13 +9,16 @@
     <div style="text-align:center; align-items: center;">
         <audio id="spotifyPlayer" controls></audio>
         <br>
-        <span id="hint"></span>
+        <span id="songName"></span>
+        <br>
+        <span id="artistName"></span>
         <br>
         <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
         <button id="submitGuess">Submit</button>
         <button id="refreshButton">Refresh</button>
         <br>
-        <button id="showHint">Hint: First Letter of Song Name</button>
+        <button id="showSong">Hint: First Letter</button>
+        <button id="showArtist">Hint: Artist Name</button>
         <br>
         <div id="suggestions"></div>
     </div>
