@@ -83,6 +83,8 @@ document.getElementById('submitGuess').addEventListener('click', async () => {
 
     if (guessedSong == track.name.toLowerCase() || guessedSong == track.name.toLowerCase().replace(/[^\w\s]/g, '')) {
         alert('Congratulations! You guessed the song correctly! :)');
+        //Removing song from playlist
+        playlist = playlist.filter(song => song.toLowerCase() !== track.name.toLowerCase());
     } else {
         alert('Oops! That is not the correct song. Try again! :(');
         console.log(track);
