@@ -5,6 +5,7 @@ const clientSecret = process.env.CLIENT_SECRET;
 const playlistId = process.env.PLAYLIST_ID;
 
 let playlist = [];
+let guessedSongs = [];
 var track = {
     name: "",
     artist: "",
@@ -47,8 +48,13 @@ async function getPlaylist(accessToken) {
 //Random Song from Playlist
 async function getRandomSong(accessToken) {
     const data = await getData(accessToken);
-    const randomIndex = Math.floor(Math.random() * data.items.length);
-    const track = data.items[randomIndex].track;
+    const availableTracks = data.items.filter(item => !guessedSongs.includes(item.track.name));
+    if (availableTracks.length === 0) {
+        alert('No more songs available in the playlist.');
+        return null;
+    }
+    const randomIndex = Math.floor(Math.random() * availableTracks.length);
+    const track = availableTracks[randomIndex].track;
     const artists = track.artists.map(artist => artist.name);
     return {
         name: track.name,
@@ -83,8 +89,7 @@ document.getElementById('submitGuess').addEventListener('click', async () => {
 
     if (guessedSong == track.name.toLowerCase() || guessedSong == track.name.toLowerCase().replace(/[^\w\s]/g, '')) {
         alert('Congratulations! You guessed the song correctly! :)');
-        //Removing song from playlist
-        playlist = playlist.filter(song => song.toLowerCase() !== track.name.toLowerCase());
+        guessedSongs.push(track.name);
     } else {
         alert('Oops! That is not the correct song. Try again! :(');
         console.log(track);
