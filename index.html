@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Heardle</title>
+    <style>
+        .body {
+            position: relative;
+            top: 50px;
+            font-size: 14pt;
+            background-color: dimgray;
+            text-align: center; 
+            align-items: center;
+        }
+    </style>
 </head>
-<body style="background-color: dimgray;">
-    <div style="text-align:center; align-items: center;">
+<body class="body">
+    <div>
         <audio id="spotifyPlayer" controls></audio>
+        <br><br>
+        <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
+        <button id="submitGuess">Submit</button>
+        <button id="refreshButton">Refresh</button>
         <br>
         <span id="songName"></span>
         <br>
         <span id="artistName"></span>
-        <br>
-        <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
-        <button id="submitGuess">Submit</button>
-        <button id="refreshButton">Refresh</button>
         <br>
         <button id="showSong">Hint: First Letter</button>
         <button id="showArtist">Hint: Artist Name</button>

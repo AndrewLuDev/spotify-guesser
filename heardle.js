@@ -112,8 +112,8 @@ document.getElementById('refreshButton').addEventListener('click', async () => {
 });
 
 document.getElementById('showSong').addEventListener('click', async () => {
-    document.getElementById('songName').innerText = `Hint: First letter is "${track.name.charAt(0)}"`;
+    document.getElementById('songName').innerText = `First letter: "${track.name.charAt(0)}"`;
 });
 document.getElementById('showArtist').addEventListener('click', async () => {
-    document.getElementById('artistName').innerText = `by: "${track.artist}"`;
+    document.getElementById('artistName').innerText = `by: ${track.artist}`;
 });
