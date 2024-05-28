@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Heardle</title>
     <style>
-        .body {
+        body {
             position: relative;
             top: 50px;
             font-size: 14pt;
@@ -13,12 +13,15 @@
             text-align: center; 
             align-items: center;
         }
+        audio {
+            margin: 8px;
+        }
     </style>
 </head>
-<body class="body">
+<body>
     <div>
         <audio id="spotifyPlayer" controls></audio>
-        <br><br>
+        <br>
         <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
         <button id="submitGuess">Submit</button>
         <button id="refreshButton">Refresh</button>
