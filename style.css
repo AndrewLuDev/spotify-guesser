@@ -1,0 +1,22 @@
+body {
+    position: relative;
+    top: 50px;
+    font-size: 14pt;
+    background-color: dimgray;
+    text-align: center; 
+    align-items: center;
+}
+audio {
+    margin: 8px;
+}
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #333;
+}
