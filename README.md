@@ -9,8 +9,17 @@ Some differences that you may notice if you have played other Heardle games befo
 1. Log into your Spotify account https://developer.spotify.com/dashboard
 2. &nbsp;i) &nbsp;Click on Create app \
    ii)&nbsp;  Fill in App name and description \
-   iii) Check Web API box \
- ![Screenshot](https://imgur.com/NbqD7x8)
+   iii) Check Web API box and Save 
+3. Click on your app and click Settings
+4. Copy Client ID and Client Secret and paste them into `heardle.js`
+5. Copy the URL from any of your Public Playlists (cannot be private), and paste the playlist ID into `heardle.js`
+
 
 ## How To Play
-[To-do]
+It's super easy! 
+1. Click on Refresh to get a new song
+2. Click on the Play button to start listening
+3. Submit your guess
+4. Repeat!
+ 
+Note: Songs that have already been guessed will be removed to prevent duplicate song guesses.
