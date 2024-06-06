@@ -8,7 +8,11 @@
 </head>
 <body>
     <div>
-        <audio id="spotifyPlayer" controls></audio>
+        <div class="audio-container">
+            <div class="audio-title">Spotify Heardle</div>
+            <div class="audio-description">Guess the song!</div>
+            <audio id="spotifyPlayer" controls></audio>
+        </div>
         <br>
         <input type="text" id="guessInput" placeholder="Enter your guess" oninput="showSuggestions()">
         <button id="submitGuess">Submit</button>
