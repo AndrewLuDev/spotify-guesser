@@ -1,9 +1,9 @@
-require('dotenv').config();
+const clientId = 'CLIENT_ID';
+const clientSecret = 'CLIENT_SECRET';
+const playlistUrl = 'PLAYLIST_URL';
+// Sample URL: 'https://open.spotify.com/playlist/123456789'
 
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-const playlistId = process.env.PLAYLIST_ID;
-
+const playlistId = playlistUrl.match(/playlist\/([^?]*)/)[1];
 let playlist = [];
 let guessedSongs = [];
 var track = {
