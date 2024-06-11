@@ -13,7 +13,7 @@ Some differences that you may notice if you have played other Heardle games befo
 4. Update the following 3 variables in `heardle.js`:
     1) **CLIENT_ID**: In your Spotify Dashboard, click on your app Settings. Copy the Client ID
     2) **CLIENT_SECRET**: In your Spotify Dashboard, click on your app Settings. Copy the Client Secret
-    3) **PLAYLIST_URL**: In your Spotify App, Copy the URL from any of your Public Playlists (cannot be private)
+    3) **PLAYLIST_URL**: In your [Spotify App, Copy the URL from any of your Public Playlists (cannot be private)](https://i.imgur.com/8XjCDNB.png)
 5. Save the file and open `index.html` in your favourite web browser (Chrome, Firefox, Safari, etc)
 6. You're all set!
 
