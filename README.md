@@ -5,8 +5,6 @@ Some differences that you may notice if you have played other Heardle games befo
 * Two new buttons that reveal hints (First letter of the Song Name, and Artist Name)
 * The starting point is randomized instead of starting at the begining of the song!
 
-
-
 ## Setting Up
 1. Log into your Spotify account: https://developer.spotify.com/dashboard
 2. 1) Click on [Create app](https://i.imgur.com/hBbRNdY.png) 
@@ -15,7 +13,7 @@ Some differences that you may notice if you have played other Heardle games befo
 4. Update the following 3 variables in `heardle.js`:
     1) **CLIENT_ID**: In your Spotify Dashboard, click on your app Settings. Copy the Client ID
     2) **CLIENT_SECRET**: In your Spotify Dashboard, click on your app Settings. Copy the Client Secret
-    3) **PLAYLIST_ID**: In your Spotify App, Copy the ID from any of your Public Playlists (cannot be private)
+    3) **PLAYLIST_URL**: In your Spotify App, Copy the URL from any of your Public Playlists (cannot be private)
 5. Save the file and open `index.html` in your favourite web browser (Chrome, Firefox, Safari, etc)
 6. You're all set!
 
